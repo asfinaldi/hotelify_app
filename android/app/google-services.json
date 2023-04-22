@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "120235679505",
+    "project_id": "hotelify-app-f54cd",
+    "storage_bucket": "hotelify-app-f54cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120235679505:android:02417f48f1c0c5ad18f6b0",
+        "android_client_info": {
+          "package_name": "com.example.hotelify_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120235679505-gd7jsu9df0vb02t9q01p3t2epcn8frhm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwLFou1lYblcVVgl2OUramqG4HpxX2m44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120235679505-gd7jsu9df0vb02t9q01p3t2epcn8frhm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
