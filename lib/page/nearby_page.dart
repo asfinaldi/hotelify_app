@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:hotelify_app/config/app_asset.dart';
 import 'package:hotelify_app/config/app_color.dart';
 import 'package:hotelify_app/config/app_format.dart';
+import 'package:hotelify_app/config/app_route.dart';
 import 'package:hotelify_app/model/hotel.dart';
 
 import '../controller/c_nearby.dart';
@@ -39,24 +40,26 @@ class NearbyPage extends StatelessWidget {
 
   GetBuilder<CNearby> hotels() {
     return GetBuilder<CNearby>(builder: (_) {
-        List<Hotel> list = _.category == 'All Place'
-            ? _.listHotel
-            : _.listHotel
-                .where((e) => e.category == cNearby.category)
-                .toList();
+      List<Hotel> list = _.category == 'All Place'
+          ? _.listHotel
+          : _.listHotel.where((e) => e.category == cNearby.category).toList();
 
-        if (list.isEmpty) {
-          return const Center(
-            child: Text('Empty'),
-          );
-        }
-        return ListView.builder(
-          itemCount: list.length,
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) {
-            Hotel hotel = list[index];
-            return Container(
+      if (list.isEmpty) {
+        return const Center(
+          child: Text('Empty'),
+        );
+      }
+      return ListView.builder(
+        itemCount: list.length,
+        shrinkWrap: true,
+        physics: const NeverScrollableScrollPhysics(),
+        itemBuilder: (context, index) {
+          Hotel hotel = list[index];
+          return GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, AppRoute.detail , arguments: hotel);
+            },
+            child: Container(
               margin: EdgeInsets.fromLTRB(
                 16,
                 index == 0 ? 0 : 8,
@@ -159,10 +162,11 @@ class NearbyPage extends StatelessWidget {
                   )
                 ],
               ),
-            );
-          },
-        );
-      });
+            ),
+          );
+        },
+      );
+    });
   }
 
   GetBuilder<CNearby> categories() {
