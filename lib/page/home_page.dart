@@ -6,6 +6,7 @@ import 'package:hotelify_app/config/app_color.dart';
 import 'package:hotelify_app/controller/c_home.dart';
 import 'package:hotelify_app/page/history_page.dart';
 import 'package:hotelify_app/page/nearby_page.dart';
+import 'package:hotelify_app/widget/coming_soon.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -23,10 +24,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Obx(() {
+        if (cHome.indexPage == 0) {
+          return NearbyPage();
+        }
         if (cHome.indexPage == 1) {
           return const HistoryPage();
         }
-        return NearbyPage();
+        return const CoomingSoon();
       }),
       bottomNavigationBar: Obx(() {
         return Material(

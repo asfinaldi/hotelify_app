@@ -8,6 +8,7 @@ import 'package:hotelify_app/config/session.dart';
 import 'package:hotelify_app/firebase_options.dart';
 import 'package:hotelify_app/page/checkout_page.dart';
 import 'package:hotelify_app/page/checkout_success_page.dart';
+import 'package:hotelify_app/page/detail_booking_page.dart';
 import 'package:hotelify_app/page/detail_page.dart';
 import 'package:hotelify_app/page/home_page.dart';
 import 'package:hotelify_app/page/intro_page.dart';
@@ -62,7 +63,7 @@ class MyApp extends StatelessWidget {
         AppRoute.checkout: (context) =>  CheckoutPage(),
         //AppRoute.checkout: (context) =>  IntroPage(),
         AppRoute.checkoutSuccess: (context) => CheckoutSuccessPage(),
-        AppRoute.detailBooking: (context) => const IntroPage(),
+        AppRoute.detailBooking: (context) => DetailBookingPage(),
       },
     );
   }

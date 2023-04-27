@@ -7,6 +7,7 @@ import 'package:hotelify_app/config/app_format.dart';
 import 'package:hotelify_app/config/app_route.dart';
 import 'package:hotelify_app/model/hotel.dart';
 
+import '../config/session.dart';
 import '../controller/c_nearby.dart';
 
 class NearbyPage extends StatelessWidget {
@@ -57,7 +58,7 @@ class NearbyPage extends StatelessWidget {
           Hotel hotel = list[index];
           return GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, AppRoute.detail , arguments: hotel);
+              Navigator.pushNamed(context, AppRoute.detail, arguments: hotel);
             },
             child: Container(
               margin: EdgeInsets.fromLTRB(
@@ -267,13 +268,33 @@ class NearbyPage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Image.asset(
-              AppAsset.profile,
-              width: 50,
-              height: 50,
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              showMenu(
+                context: context,
+                position: const RelativeRect.fromLTRB(16, 16, 0, 0),
+                items: [
+                  const PopupMenuItem(
+                    value: 'logout',
+                    child: Text('Logout'),
+                    
+                  )
+                ],
+              ).then((value) {
+                if (value == 'logout') {
+                  Session.clearUser();
+                  Navigator.pushNamed(context, AppRoute.signin);
+                }
+              });
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Image.asset(
+                AppAsset.profile,
+                width: 50,
+                height: 50,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Column(
@@ -286,10 +307,12 @@ class NearbyPage extends StatelessWidget {
                     .titleLarge!
                     .copyWith(fontWeight: FontWeight.w900),
               ),
-              const Text(
-                '100 hotels',
-                style: TextStyle(fontSize: 12.0, color: Colors.grey),
-              ),
+              Obx(() {
+                return Text(
+                  '${cNearby.listHotel.length} hotels',
+                  style: const TextStyle(fontSize: 12.0, color: Colors.grey),
+                );
+              }),
             ],
           )
         ],
