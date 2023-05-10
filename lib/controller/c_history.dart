@@ -5,6 +5,7 @@ import 'package:hotelify_app/source/booking_source.dart';
 class CHistory extends GetxController {
   final _listBooking = <Booking>[].obs;
 
+  // ignore: invalid_use_of_protected_member
   List<Booking> get listBooking => _listBooking.value;
 
   getlistBooking(String id) async {

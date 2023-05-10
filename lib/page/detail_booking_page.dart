@@ -1,18 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:hotelify_app/config/app_asset.dart';
 import 'package:hotelify_app/config/app_color.dart';
 import 'package:hotelify_app/config/app_format.dart';
-import 'package:hotelify_app/config/app_route.dart';
-import 'package:hotelify_app/controller/c_user.dart';
 import 'package:hotelify_app/model/booking.dart';
-import 'package:hotelify_app/model/hotel.dart';
-import 'package:hotelify_app/source/booking_source.dart';
-import 'package:hotelify_app/widget/button_custom.dart';
-import 'package:intl/intl.dart';
+
 
 class DetailBookingPage extends StatelessWidget {
-  DetailBookingPage({super.key});
+  const DetailBookingPage({super.key});
 
   @override
   Widget build(BuildContext context) {

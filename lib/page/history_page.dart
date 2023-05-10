@@ -180,7 +180,7 @@ class _HistoryPageState extends State<HistoryPage> {
               Obx(() {
                 return Text(
                   '${cHistory.listBooking.length} transaction',
-                  style: TextStyle(fontSize: 12.0, color: Colors.grey),
+                  style: const TextStyle(fontSize: 12.0, color: Colors.grey),
                 );
               }),
             ],

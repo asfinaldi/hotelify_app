@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 import 'package:hotelify_app/model/hotel.dart';
 import 'package:hotelify_app/source/hotel_source.dart';
@@ -19,6 +18,7 @@ class CNearby extends GetxController {
 
   final _listHotel = <Hotel>[].obs;
 
+  // ignore: invalid_use_of_protected_member
   List<Hotel> get listHotel => _listHotel.value;
 
   getListHotel() async {

@@ -1,6 +1,5 @@
 import 'package:d_info/d_info.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:hotelify_app/config/app_asset.dart';
 import 'package:hotelify_app/config/app_route.dart';
 import 'package:hotelify_app/source/user_source.dart';
@@ -36,10 +35,10 @@ class SigninPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: LayoutBuilder(builder: (context, Constraints) {
+        child: LayoutBuilder(builder: (context, constraints) {
           return SingleChildScrollView(
             child: ConstrainedBox(
-              constraints: BoxConstraints(minHeight: Constraints.maxHeight),
+              constraints: BoxConstraints(minHeight: constraints.maxHeight),
               child: Form(
                 key: formKey,
                 child: Padding(
@@ -55,7 +54,7 @@ class SigninPage extends StatelessWidget {
                       const SizedBox(
                         height: 80.0,
                       ),
-                      Align(
+                      const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Sign In \nTo Your Account',
@@ -98,6 +97,7 @@ class SigninPage extends StatelessWidget {
                       ),
                       TextFormField(
                         controller: controllerPassword,
+                        obscureText: true,
                         validator: (value) =>
                             value == '' ? "Don't empty" : null,
                         decoration: InputDecoration(
@@ -132,7 +132,7 @@ class SigninPage extends StatelessWidget {
                       const SizedBox(
                         height: 24.0,
                       ),
-                      Text(
+                      const Text(
                         'Create new Account',
                         style: TextStyle(color: Colors.grey),
                       )

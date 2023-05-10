@@ -164,7 +164,7 @@ class DetailPage extends StatelessWidget {
                   horizontal: 36,
                   vertical: 14,
                 ),
-                child: Text(
+                child: const Text(
                   'View Receipt ',
                   textAlign: TextAlign.center,
                   style: TextStyle(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:hotelify_app/config/app_asset.dart';
 import 'package:hotelify_app/config/app_color.dart';
 import 'package:hotelify_app/controller/c_home.dart';

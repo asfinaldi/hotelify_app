@@ -36,6 +36,6 @@ class UserSource {
     DocumentReference<Map<String, dynamic>> ref =
         FirebaseFirestore.instance.collection('User').doc(id);
     DocumentSnapshot<Map<String, dynamic>> doc = await ref.get();
-    return User.fromJson(doc.data()!);
+    return User.fromJson(doc.data() !);
   }
 }
